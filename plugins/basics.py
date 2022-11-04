@@ -5,8 +5,8 @@ from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
 @Client.on_message(filters.command(["start"]))
 async def start(bot, update):
-    await bot.send_message(
-        chat_id=update.chat.id,
+    await bot.reply_text(
+        #chat_id=update.chat.id,
         text="Hi",
         reply_markup=InlineKeyboardMarkup(
             [
@@ -22,6 +22,5 @@ async def start(bot, update):
                 ],
 
             ]
-        ),
-        reply_to_message_id=update.message_id
+        )
         )
